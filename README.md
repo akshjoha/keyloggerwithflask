@@ -4,7 +4,7 @@ Flask Keylogger Web Interface
 This project is a Flask-based web application that provides a user interface to control a simple keylogger. The keylogger captures keystrokes and logs them into a text file, which can be started or stopped from the web interface.
 
 Features
-Keylogger Activation and Deactivation:
+**Keylogger Activation and Deactivation:**
 
 Start capturing keystrokes by pressing the Activate button.
 Stop capturing keystrokes by pressing the Stop button.
