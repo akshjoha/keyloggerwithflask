@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Keylogger Interface</title>
+    <link rel="stylesheet" href="/static/styles.css">
+</head>
+<body>
+    <div class="container">
+        <div class="image-section">
+            <img src="/static/key.png" alt="Background" class="background-image">
+        </div>
+        <div class="content-section">
+            <h1>Click Here to Activate Keylogger</h1>
+            <p>This is a web interface for a keylogger!</p>
+            <div class="buttons">
+                <button class="activate-btn" onclick="activateKeylogger()">Activate</button>
+                <button class="stop-btn" onclick="stopKeylogger()">Stop</button>
+            </div>
+            <p id="status-message"></p>
+        </div>
+    </div>
+
+    <script>
+        async function activateKeylogger() {
+            const response = await fetch('/activate', { method: 'POST' });
+            const data = await response.json();
+            document.getElementById('status-message').innerText = data.status;
+        }
+
+        async function stopKeylogger() {
+            const response = await fetch('/stop', { method: 'POST' });
+            const data = await response.json();
+            document.getElementById('status-message').innerText = data.status;
+        }
+    </script>
+</body>
+</html>
